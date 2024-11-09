@@ -1,3 +1,4 @@
+import React, { useEffect } from 'react';
 import { Form, message } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import { LoginUser } from '../../apicalls/users.js';
@@ -23,6 +24,13 @@ function Login() {
       message.error(err);
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      navigate("/");
+    }
+  }, []);
+
     return (
       <div>
            <div className="flex justify-center h-screen items-center bg-primary">
