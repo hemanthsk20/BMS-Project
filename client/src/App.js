@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import { useSelector } from "react-redux";
 import Profile from "./pages/Profile";
 import Admin from "./pages/Admin";
+import TheatresForMovie from "./pages/TheatresForMovie";
 
 // Styles
 import "./stylesheets/alignments.css";
@@ -49,7 +50,15 @@ function App() {
                 <Admin />
               </ProtectedRoute>
             }
-          />
+          />          
+          <Route
+          path="/movie/:id"
+          element={
+            <ProtectedRoute>
+              <TheatresForMovie />
+            </ProtectedRoute>
+          }
+        />
         <Route path='/login' element={<Login />} />
         <Route path='/register' element={<Register />} />
       </Routes>
