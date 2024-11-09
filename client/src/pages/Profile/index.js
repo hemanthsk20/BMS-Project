@@ -1,6 +1,7 @@
 import React from "react";
 import { Tabs } from "antd";
 import PageTitle from "../../components/PageTitle";
+import TheatresList from "./TheatresList";
 
 function Profile() {
   return (
@@ -13,7 +14,7 @@ function Profile() {
           <p>profile</p>
         </Tabs.TabPane>
         <Tabs.TabPane tab="Apply for Theatre" key="2">
-          {/* <TheatresList /> */}
+          <TheatresList />
           <p>profile</p>
         </Tabs.TabPane>
       </Tabs>
