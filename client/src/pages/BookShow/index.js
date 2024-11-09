@@ -9,10 +9,8 @@ import StripeCheckout from "react-stripe-checkout";
 import Button from "../../components/button.js";
 import { BookShowTickets, MakePayment } from "../../apicalls/bookings";
 
-// Scaler Backup key
-// const STRIPE_KEY = "pk_test_51OPndCSHbLbtEZ3fNbxIvwzX6S8WiYcVdojanDVig57a18RPsT6YsMofUPcCLZUAq4P5JJ3Ids9jUiBiOJpunFr500PFm8iEzJ";
-
-const STRIPE_KEY = "pk_test_51QJJwH03ufZ9NCNjUgwFqo5bcaXAZMW3ds3OmavUDyYHqrj2Zq1eLetMgusqBNhSVtA6BTgF0zYsi1u10AIKGrt400fhyCxrMR";
+const STRIPE_KEY = "pk_test_51OPndCSHbLbtEZ3fNbxIvwzX6S8WiYcVdojanDVig57a18RPsT6YsMofUPcCLZUAq4P5JJ3Ids9jUiBiOJpunFr500PFm8iEzJ";
+// const STRIPE_KEY = "pk_test_51QJJwH03ufZ9NCNjUgwFqo5bcaXAZMW3ds3OmavUDyYHqrj2Zq1eLetMgusqBNhSVtA6BTgF0zYsi1u10AIKGrt400fhyCxrMR";
 function BookShow() {
   const { user } = useSelector((state) => state.users);
   const [show, setShow] = React.useState(null);
