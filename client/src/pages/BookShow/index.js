@@ -176,7 +176,8 @@ function BookShow() {
 
                 <h1 className="text-sm">
                   <b>Total Price</b> : USD{" "}
-                  {Math.ceil((selectedSeats.length * show.ticketPrice)/84)}
+                  {Math.ceil((selectedSeats.length * show.ticketPrice))}
+                  {/* to accept in inr then divide by 84 or current inr value over dollor eg: Math.ceil((selectedSeats.length * show.ticketPrice))/84 */}
                 </h1>
               </div>
             </div>
@@ -184,7 +185,7 @@ function BookShow() {
               billingAddress
               token={onToken}
               stripeKey={STRIPE_KEY}
-              currency="INR"
+              currency="USD"
               amount={selectedSeats.length * show.ticketPrice * 100}
             >
               <Button title="Pay to book" />

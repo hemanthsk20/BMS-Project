@@ -9,7 +9,7 @@ router.post("/make-payment", authMiddleware, async (_, res) => {
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: "INR",
+      currency: "USD",
     });
 
     const transactionId = paymentIntent.client_secret;
@@ -26,6 +26,34 @@ router.post("/make-payment", authMiddleware, async (_, res) => {
     });
   }
 });
+
+// router.post('/make-payment',authMiddleware,async (req,res)=>{
+//   try{
+//       const {token,amount} = req.body;
+//       const customer = await stripe.customers.create({
+//           email:token.email,
+//           source:token.id
+//       });
+//       const charge = await stripe.charges.create({
+//           amount: amount,
+//           currency: "usd",
+//           customer: customer.id,
+//           receipt_email: token.email,
+//           description: "Ticket Booked for Movie",
+//       })
+//       const transactionId = charge.id;
+//       res.send({
+//           success:true,
+//           message:'Payment Done',
+//           data:transactionId
+//       })
+//   }catch(err){
+//       res.send({
+//           success:false,
+//           message:err.message
+//       })
+//   }
+// })
 
 router.post("/book-show", authMiddleware, async (req, res) => {
   try {
