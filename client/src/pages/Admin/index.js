@@ -11,7 +11,6 @@ function Admin() {
       <Tabs defaultActiveKey="1">
         <Tabs.TabPane tab="Movies" key="1">
           <MoviesList />
-          <p>admin</p>
         </Tabs.TabPane>
 
         <Tabs.TabPane tab="Theatres" key="2">
